@@ -22,7 +22,6 @@
         justify-content: space-between;
         padding: 10px;
         box-sizing: border-box;
-        
       }
       .header a {
         color: rgb(0, 0, 0);
@@ -184,7 +183,37 @@ body, html {
   display: inline-block;
   width: 50px; /* Set the width to the space size you want */
 }
+.footer {
+    position: fixed; /* Fixed positioning for the footer */
+    bottom: 0; /* Align it to the bottom */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Full width */
+    margin: 0px ; /* Center the content */
+    background-color: #222; /* Footer background */
+    color: #ffffff; /* White text */
+    text-align: left; /* Align text to the right */
+    
+    padding-left: 10px;
 
+    font-size: 12px; /* Smaller text */
+    z-index: 1000; /* Ensure footer stays above other content */
+    margin: 1;
+    line-height: 1; /* Compact line spacing */
+    display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+}
+ 
+@media only screen and (max-width: 600px) {
+    .footer {
+      width: 100%; /* Full width on smaller screens */
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box; /* Include padding in width calculation */
+        font-size: 6px; /* Smaller text size */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+}
 .cv-link {
     color: rgb(0, 0, 0); /* Sets the link color to white */
     
@@ -268,43 +297,21 @@ body, html {
 }
 
 }
-.footer {
-    position: fixed; /* Fixed positioning for the footer */
-    bottom: 0; /* Align it to the bottom */
-    left: 0; /* Align it to the left */
-    width: 100%; /* Full width */
-    margin: 0px ; /* Center the content */
-    background-color: #222; /* Footer background */
-    color: #ffffff; /* White text */
-    text-align: left; /* Align text to the right */
-    
-    padding-left: 10px;
 
-    font-size: 12px; /* Smaller text */
-    z-index: 1000; /* Ensure footer stays above other content */
-    margin: 1;
-    line-height: 1; /* Compact line spacing */
-    display: flex;
-        justify-content: space-between;
-        box-sizing: border-box;
-}
- 
-@media only screen and (max-width: 600px) {
-    .footer {
-      width: 100%; /* Full width on smaller screens */
-        padding-left: 15px;
-        padding-right: 15px;
-        box-sizing: border-box; /* Include padding in width calculation */
-        font-size: 6px; /* Smaller text size */
-        box-sizing: border-box; /* Include padding in width calculation */
-    }
-}
 .image-container {
             position: absolute; /* Make it position absolutely within the body */
             top: 0; /* Align it to the top */
             right: 0; /* Align it to the right */
             width: 65%; /* Take up 65% of the width */
             height: 100%; /* Full height to match the content area */
+            font-size: 12px; /* Set the font size to 12px */
+           
+            
+            margin-bottom: 1em; /* Space after the paragraph */
+            text-align: left;
+            
+            
+            
             
         }
 
@@ -315,15 +322,24 @@ body, html {
             display: block; /* Stack them on top of each other */
             margin-bottom: 0px; /* Add some space between the images */
         }
+      
+        
 
         @media only screen and (max-width: 700px) {
-            .content, .image-container {
+            .content, .image-container  {
                 width: 100%; /* Full width for smaller screens */
                 position: relative; /* Position relative for the mobile layout */
+                font-size: 10px;
+                
+                
+                
+                
             }
             .image-container {
                 order: 2; /* Ensure images come after the text on mobile */
+                text-align: left;
             }
+          
         }
 
     </style>
@@ -341,34 +357,40 @@ body, html {
 
         
         <div class="content">
-            <h1>In The Words Where You've Touched Are Soft </h1>
+            <h1>Occurs</h1>
 
-            <p class="series-description">Dalam Kata-kata Di Mana Kau Sentuh Lembut<br>Video Installation, 10min5sec, 2024</p>
-    <h1></h1>
+            <p class="series-description">Painting, Ongoing series (2023 - )</p>
     <h1></h1>
     
-    <p>This video comprises erratic dreamscape scenes where viewers are invited to integrate into the fictional narration. The empty scenes of the basement's humidity and tropical forest are accompanied by a soft woman's voice gently speaking in Malay. In the installation, images are modified with a constant flashlight and surreal lighting, creating an additional layer of sensation. They fortify the nonexistence while emphasising a harsh ugliness common in third-world countries. The monologue suggests a story of foreign experience with war scenes and a hysterical mental state, intending to transcribe the reception and regard for the real-world major conflict continuously happening as a foreigner in these contexts. By connecting both elements, the inner contrasts of fanatical idealism and those uninfected are revealed, as if the dilemma has turned into a sado-masochistic dream of pain fulfilment.</p>
-    
-
+    <h1></h1>
+    <p>This series of paintings reflect a intimate experience of violences, unseen or seen. 
+      Expressive figures and traits meditative on the events occurs under a post traumatic, self therapeutic pace of mind. </p>
+       
         </div>
 
 
         <div class="image-container">
             <!-- Add your images here -->
         
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1711997097/yd3cgvotkmbdrrltewpa.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1711905479/tioqds0r3mjagwwv6jfr.jpg">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1711995808/qg4bn00s17cmidcdzucp.jpg">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1711995808/red4itocw29h4xw4ngav.jpg" >
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1711997176/stismaegwdhjikdrnei0.png" >
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1711995809/artbcnzuidrhqblglc5k.jpg" >
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1711997177/aolcn8uggcmxkbktnmoe.png" >
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1711997188/lneakpayked1lppp4e3a.jpg" >
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505365/wqynhb6ugsf39d87bugb.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505355/itpmmg678rbgb7gek32t.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505549/zkioub87abay43seqobb.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505354/mnrg1yysvvuzcii5jrvf.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505355/jde2uqgwky5je4qat3zt.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505355/qk5raegvhxg1d80ld8dc.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505357/pbjmjzfdztcqotruinp9.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505355/uzwwzvpchwvd3p2esbgh.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505549/ed6untyut0wbiytixx3g.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505549/osrqwkngwoj2ab5p8eu0.png">
+        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505361/ko08bbpexmtzdsemfqk7.png">
+
+      
         
-        </div>
         <div class="footer">
           <p>Image courtesy of the artist, © 2024.       </p>
       
               </div>
+        
+
 </body>
 </html>
