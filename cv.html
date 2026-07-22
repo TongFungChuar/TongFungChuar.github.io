@@ -168,6 +168,48 @@ body, html {
     text-align: left;
 }
 
+.cv-list{
+    margin-top:8px;
+}
+
+.cv-item{
+    position:relative;
+    padding-left:18px;
+    line-height:1.5;
+    font-size: 12px; /* Standard text size */
+    margin-bottom: 0.08em; /* Space after each paragraph */
+    text-align: left;
+}
+
+.cv-item::before{
+    content:"-";
+    position:absolute;
+    left:0;
+}
+
+/* Education */
+
+.education-item{
+    display:flex;
+    align-items:flex-start;
+    margin-bottom:0.08em;
+}
+
+.education-year{
+    width:120px;
+    flex-shrink:0;
+    font-size:12px;
+}
+
+.education-year::after{
+    content:" —";
+}
+
+.education-text{
+    flex:1;
+    font-size:12px;
+    line-height:1.5;
+}
 
 .fixed-space {
   display: inline-block;
@@ -239,7 +281,7 @@ body, html {
             <!-- Use a span inside the link for the arrow to apply styles specifically to it -->
             <a href="./info" class="left"><span class="arrow">&#x27F5;</span></a>
             <div class="right">
-                <a href="./info">Info /</a>  <a href="./archive">Archive /</a>  <a href="./Contact">Contact</a>
+                <a href="./info">Info /</a>  <a href="./archive">Works /</a>  <a href="./Contact">Contact</a>
               </div>
           </div>
           
@@ -249,49 +291,85 @@ body, html {
             
     
     <div class="education-section">
-        
-        <h1>EDUCATION</h1>
-        
-                <p>2019-2021 —— DNSEP Master in Fine Art (hons), National School of Fine Art of Dijon (ENSA Dijon), France
-                <br>2019-2020 —— China Academy of Art (exchange programme), Hangzhou, China
-                <br>2016-2019 —— DNA Bachelor in fine art (hons), National School of Fine Art of Dijon (ENSA Dijon), France
+
+<h1>EDUCATION</h1>
+
+<div class="education-item">
+    <div class="education-year">2019–2021</div>
+    <div class="education-text">
+        DNSEP Master in Fine Art (Hons), National School of Fine Art of Dijon (ENSA Dijon), France
     </div>
+</div>
+
+<div class="education-item">
+    <div class="education-year">2019–2020</div>
+    <div class="education-text">
+        China Academy of Art (Exchange Programme), Hangzhou, China
+    </div>
+</div>
+
+<div class="education-item">
+    <div class="education-year">2016–2019</div>
+    <div class="education-text">
+        DNA Bachelor in Fine Art (Hons), National School of Fine Art of Dijon (ENSA Dijon), France
+    </div>
+</div>
+
+</div>
             </section>
             <h1></h1>
             <h1></h1>
             <section class="exhibitions">
-                <h1>SELECTED EXHIBITIONS</h1>
-                <p> - The Spring Show, Suma Orientalis Fine Art, Kuala Lumpur, Malaysia, 2024
-                <br> - Golden Liquid, Ruang Biawak, Muar, Malaysia, 2024
-                <br> - Pieces of Cement, 11 Plus Studio, Johor Bahru, Malaysia, 2024
-                    <br> - Des Origines, L'école d’Art du Belfort, Belfort, France, 2023
-                    <br> - Photo-Exposition Premisse, Espace Blanc du Marais, Paris, France, 2022
-                    <br> - Cache-misère, L'école Media Art du Grand Chalon, Chalon-sur-Saône, France, 2020
-                    <br> - To Say Almost the Same, Xika Art Exhibition Hall, Hangzhou, China, 2019
-                    <br> - THEBOOKSHOW 2019 Open call showcase, NTU Centre for Contemporary Art Singapore, Singapore, 2019</p>
-                <!-- Add more exhibition entries here -->
-            </section>
+
+<h1>SELECTED EXHIBITIONS</h1>
+
+<div class="cv-list">
+
+<div class="cv-item">New Figures, The Backroom KL, Kuala Lumpur, Malaysia, 2025</div>
+<div class="cv-item">1000 Tiny Artworks, Hin Bus Depot, Penang, Malaysia, 2025</div>
+<div class="cv-item">Solo Show – Occurs, The Changing Room, Kuala Lumpur, Malaysia, 2025</div>
+<div class="cv-item">The Spring Show, Suma Orientalis Fine Art, Kuala Lumpur, Malaysia, 2024</div>
+<div class="cv-item">Golden Liquid, Ruang Biawak, Muar, Malaysia, 2024</div>
+<div class="cv-item">Pieces of Cement, 11 Plus Studio, Johor Bahru, Malaysia, 2024</div>
+<div class="cv-item">Des Origines, L'école d'Art du Belfort, Belfort, France, 2023</div>
+<div class="cv-item">Photo-Exposition Premisse, Espace Blanc du Marais, Paris, France, 2022</div>
+<div class="cv-item">Cache-misère, L'école Media Art du Grand Chalon, France, 2020</div>
+<div class="cv-item">To Say Almost the Same, Xika Art Exhibition Hall, Hangzhou, China, 2019</div>
+<div class="cv-item">THEBOOKSHOW 2019 Open Call Showcase, NTU CCA Singapore, Singapore, 2019</div>
+
+</div>
+
+</section>
             <h1></h1>
             <h1></h1>
         
             <section class="professional-experience">
                 <h1>PROFESSIONAL EXPERIENCES & INTERNSHIPS</h1>
-                <p> - Art Assistant, Big Pieces Studio, Kuala Lumpur, Malaysia, 2024
-                <br> - Gallery Assistant, MNP Auction House, Kuala Lumpur, Malaysia, 2024
-                <br> - Assistant Curator, Suma Orientalis Fine Art, Kuala Lumpur, Malaysia, 2023
-                <br> - Production assistant in decoration creation studio, Atelier Bournillat Sculpture (Nathalie Bournillat), Paris, France, 2022
-                <br> - Internships as a photo assistant in independent publishing studio, Ces Editions (Hubert Crabières), Paris and Argenteuil, France, 2019
-                <br> - Participation in the creation of the graphic identity of the Rencontres Cinématographiques de Dijon, workshop directed by studio La Direction (Aurélien Arnaud and Elsa Audouin), France, 2019
-                <br> - Internships as artist assistant With Claude Cattelain, Bruxelles, Belgium, 2018
-                <br> - Internships as artist assistant With Vincent Ganivet, Paray le Monial and Paris, France, 2017</p>
-                <!-- Add more professional experiences here -->
+                
+<div class="cv-list">
+
+<div class="cv-item">Lecturer, Limkokwing University, Cyberjaya, Selangor, Malaysia, 2025 –</div>
+<div class="cv-item">Art Assistant, Big Pieces Studio, Kuala Lumpur, Malaysia, 2024</div>
+<div class="cv-item">Gallery Assistant, MNP Auction House, Kuala Lumpur, Malaysia, 2024</div>
+<div class="cv-item">Assistant Curator, Suma Orientalis Fine Art, Kuala Lumpur, Malaysia, 2023</div>
+<div class="cv-item">Production Assistant in Decoration Creation Studio, Atelier Bournillat Sculpture (Nathalie Bournillat), Paris, France, 2022</div>
+<div class="cv-item">Photo Assistant Internship, Ces Editions (Hubert Crabières), Paris & Argenteuil, France, 2019</div>
+<div class="cv-item">Participation in the creation of the graphic identity for the Rencontres Cinématographiques de Dijon, workshop by Studio La Direction (Aurélien Arnaud & Elsa Audouin), France, 2019</div>
+<div class="cv-item">Artist Assistant Internship with Claude Cattelain, Brussels, Belgium, 2018</div>
+<div class="cv-item">Artist Assistant Internship with Vincent Ganivet, Paray-le-Monial & Paris, France, 2017</div>
+
+</div>
+
             </section>
             <h1></h1>
             <h1></h1>
         
             <section class="Addition information">
                 <h1>ADDITIONAL INFORMATIONS</h1>
-                <p>- Works showed in Workshop “Fake it till you make it” curated by l'atelier Le Marquis, Hall38 and ENSA Dijon, in Dijon, France, 2021<br>- Works showed on Revue Fantome issue N0 and N1, published in France, 2018</p>
+                <div class="cv-list">
+
+<div class="cv-item">Works showed in Workshop “Fake it till you make it” curated by l'atelier Le Marquis, Hall38 and ENSA Dijon, in Dijon, France, 2021</div>
+<div class="cv-item">Works showed on Revue Fantome issue N0 and N1, published in France, 2018</div>
                 <h1></h1>
                 <h1></h1>
                 <h1></h1>
