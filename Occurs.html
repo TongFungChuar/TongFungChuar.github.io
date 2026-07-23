@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tong Fung Chuar</title>
+    <link rel="preconnect" href="https://res.cloudinary.com">
     <style>
       body, html {
         margin: 0;
@@ -50,11 +51,6 @@
   text-decoration: underline; /* Underline the text */
   color: #000000; /* Change color on hover - choose a color that fits your design */
 }
-    
-    /* Active (clicked) link style */
-    .active {
-      text-decoration: underline; /* Keeps the underline for active link */
-    }
       @media screen and (max-width: 1050px) {
       .header .left , .header .right a {
         font-size: 15px; /* Larger font for better readability on small screens */
@@ -336,7 +332,8 @@ body, html {
                 
             }
             .image-container {
-                order: 2; /* Ensure images come after the text on mobile */
+                /* Images already appear after the text in the HTML source order,
+                   so no flex/order property is needed here for mobile stacking. */
                 text-align: left;
             }
           
@@ -374,26 +371,23 @@ body, html {
 
         <div class="image-container">
             <!-- Add your images here -->
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1784705020/IMG_2577_2_mxhzsn.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1784705034/IMG_2574_zbi9fv.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1784705495/IMG_50852_gdzpmi.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1784705032/IMG_2576_1_gumokc.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505355/itpmmg678rbgb7gek32t.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505549/zkioub87abay43seqobb.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505354/mnrg1yysvvuzcii5jrvf.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505355/qk5raegvhxg1d80ld8dc.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505355/uzwwzvpchwvd3p2esbgh.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505549/ed6untyut0wbiytixx3g.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505549/osrqwkngwoj2ab5p8eu0.png">
-        <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/v1734505361/ko08bbpexmtzdsemfqk7.png">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1784791393/IMG_2577_2_mbzxct.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1784791395/IMG_2574_lrwgjd.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1784791394/IMG_5085_ieo1pb.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1784791396/IMG_2576_1_jrjjib.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1734505355/itpmmg678rbgb7gek32t.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1734505549/zkioub87abay43seqobb.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1734505354/mnrg1yysvvuzcii5jrvf.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1734505355/qk5raegvhxg1d80ld8dc.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1734505355/uzwwzvpchwvd3p2esbgh.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1734505549/ed6untyut0wbiytixx3g.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1734505549/osrqwkngwoj2ab5p8eu0.png" alt="Occurs painting series artwork">
+            <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_1200/v1734505361/ko08bbpexmtzdsemfqk7.png" alt="Occurs painting series artwork">
+        </div>
 
-      
-        
         <div class="footer">
           <p>Image courtesy of the artist, © 2026.       </p>
-      
-              </div>
-        
+        </div>
 
 </body>
 </html>
