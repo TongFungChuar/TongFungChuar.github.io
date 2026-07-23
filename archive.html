@@ -142,7 +142,7 @@
           position: fixed;
           left: 0;
           top: 50px;
-          width: 35%;
+          width: 32%;
           height: calc(100% - 50px);
           background-color: #fff;
           padding-left: 30px;
@@ -225,7 +225,6 @@
           margin-left: 35%;
           width: 65%;
           height: auto;
-          padding-left: 20px;
         }
 
         .main-content img {
@@ -241,6 +240,15 @@
         .img-link{
             position: relative;
             cursor: pointer;
+            overflow: hidden; /* needed so the zoomed image doesn't spill into neighbors */
+        }
+
+        .img-link img{
+            transition: transform 0.4s ease;
+        }
+
+        .img-link:hover img{
+            transform: scale(1.03); /* subtle zoom feedback on hover, desktop only in practice since mobile has no hover */
         }
 
         .link-hint{
