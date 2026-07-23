@@ -242,6 +242,15 @@
             position: relative;
             cursor: pointer;
             overflow: hidden; /* needed so the zoomed image doesn't spill into neighbors */
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .img-link.is-visible{
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .img-link img{
@@ -324,8 +333,9 @@
           color: #ffffff;
           text-align: left;
           padding-left: 10px;
-          padding-top: 12px;
-          padding-bottom: 12px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+         
           font-size: 12px;
           z-index: 1000;
           line-height: 1;
@@ -334,6 +344,9 @@
           box-sizing: border-box;
           font-family: Helvetica , sans-serif;
         }
+        .footer p {
+    margin: 0;
+}
 
         @media only screen and (max-width: 600px) {
           .footer {
@@ -534,6 +547,26 @@
                         window.location.href = destination;
                     });
                 }
+            });
+
+            // ---- Fade in thumbnails as they scroll into view ----
+            const thumbnails = document.querySelectorAll(".img-link");
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: "0px 0px -8% 0px"
+            });
+
+            thumbnails.forEach((el, i) => {
+                el.style.transitionDelay = (Math.min(i, 4) * 60) + "ms";
+                revealObserver.observe(el);
             });
         });
     </script>
