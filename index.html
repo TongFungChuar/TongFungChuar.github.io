@@ -72,7 +72,10 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    /* This transition also governs the very first slide: since it starts at
+       opacity 0 in CSS, the moment JS sets it to 1 on page load, it fades in
+       over this same duration/curve, out of the black background. */
+    transition: opacity 2.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Applies in both portrait and landscape now, so mobile portrait
@@ -147,7 +150,16 @@
     setTimeout(showSlides, 5000);
   }
 
-  document.addEventListener('DOMContentLoaded', showSlides);
+  // A plain DOMContentLoaded -> showSlides() call can land in the same
+  // render step as the initial opacity:0 state, so the browser never
+  // paints "0" before jumping to "1" and the transition gets skipped.
+  // Waiting two animation frames guarantees that first paint happens,
+  // so the opening image actually fades in instead of just appearing.
+  document.addEventListener('DOMContentLoaded', function () {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(showSlides);
+    });
+  });
 </script>
 
 </body>
