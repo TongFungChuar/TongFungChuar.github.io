@@ -16,7 +16,7 @@
       .header {
         position: fixed;
         width: 100%;
-        color: black;
+        color: rgb(40, 40, 40);
         background: transparent;
         z-index: 1000;
         display: flex;
@@ -25,7 +25,7 @@
         box-sizing: border-box;
       }
       .header a {
-        color: rgb(0, 0, 0);
+        color: rgb(40, 40, 40);
         text-decoration: none;
         font-family: Helvetica , sans-serif;
       }
@@ -33,7 +33,7 @@
     .header .right a {
       cursor: pointer;
       text-decoration: none; /* Removes underline by default */
-      color: rgb(0, 0, 0); /* Set the text color */
+      color: rgb(40, 40, 40); /* Set the text color */
       padding: 5px; /* Adds some padding around the links */
       
     }
@@ -50,7 +50,7 @@
 
     .header a.left:hover {
   text-decoration: underline; /* Underline the text */
-  color: #000000; /* Change color on hover - choose a color that fits your design */
+  color: rgb(40, 40, 40); /* Change color on hover - choose a color that fits your design */
 }
     
     /* Active (clicked) link style */
@@ -131,7 +131,7 @@ body, html {
     margin: 0;
     padding: 0;
     background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    color: rgb(40, 40, 40);
     font-family: Helvetica, sans-serif; /* or any other font you're using */
 }
 
@@ -142,6 +142,16 @@ body, html {
     margin: 0px ; /* Center the content */
     padding-top: 40px;
     padding-left: 30px;
+    opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .content h1, .content h2, .content p {
@@ -151,7 +161,7 @@ body, html {
 .content h1 {
     font-size: 16px; /* Large font size for main heading */
     padding-bottom: 0.5em; /* Space below the heading */
-    color: rgb(0, 0, 0);
+   color: rgb(40, 40, 40);
     text-decoration: none;
     font-family: Helvetica , sans-serif
 }
@@ -222,9 +232,9 @@ body, html {
 
     .content {
         width: 100%; /* Full width on smaller screens */
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 40px; /* Adjust padding to be smaller on mobile */
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 80px; /* Adjust padding to be smaller on mobile */
         box-sizing: border-box; /* Include padding in width calculation */
     }
 

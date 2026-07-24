@@ -78,6 +78,12 @@
     transition: opacity 2.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .mySlides.first-fade {
+    transform: translateY(16px);
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   /* Applies in both portrait and landscape now, so mobile portrait
      no longer falls back to unset/cropped sizing */
   .mySlides img {
@@ -100,7 +106,7 @@
 </div>
 
 <div class="slideshow-container">
-  <div class="mySlides">
+  <div class="mySlides first-fade">
     <img src="https://res.cloudinary.com/dt5cghjrg/image/upload/f_auto,q_auto,w_2400/v1711896780/tetjjdfteriwjrhwwjzy.jpg" alt="Artwork by Tong Fung Chuar">
   </div>
 
@@ -134,6 +140,16 @@
   // regardless of how many slides exist.
   var slideIndex = -1;
 
+  // The very first slide stays on screen for a shorter time before its
+  // fade-out begins. Its fade-out transition itself is still governed by
+  // the normal .mySlides CSS rule (2.8s), unchanged — only the wait before
+  // that fade-out starts is shorter. After this first cycle, every slide
+  // (including this one, if the loop comes back around) uses the normal
+  // display time.
+  var isFirstSlide = true;
+  var normalDisplayTime = 5000;
+  var firstSlideDisplayTime = 3000; // adjust this to taste
+
   function showSlides() {
     var slides = document.getElementsByClassName("mySlides");
     var nextIndex = (slideIndex + 1) % slides.length;
@@ -147,7 +163,10 @@
     slides[nextIndex].style.opacity = 1;
     slideIndex = nextIndex;
 
-    setTimeout(showSlides, 5000);
+    var delay = isFirstSlide ? firstSlideDisplayTime : normalDisplayTime;
+    isFirstSlide = false;
+
+    setTimeout(showSlides, delay);
   }
 
   // A plain DOMContentLoaded -> showSlides() call can land in the same
@@ -157,7 +176,25 @@
   // so the opening image actually fades in instead of just appearing.
   document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(function () {
-      requestAnimationFrame(showSlides);
+      requestAnimationFrame(function () {
+        showSlides();
+
+        // Once the first slide's quicker fade-in finishes, drop the
+        // first-fade class so this slide uses the normal 2.8s transition
+        // like every other slide from then on (including if the loop
+        // comes back around to it later).
+        var firstSlide = document.querySelector('.mySlides.first-fade');
+        if (firstSlide) {
+          // Trigger the rise-up alongside the opacity fade set by showSlides()
+          firstSlide.style.transform = 'translateY(0)';
+
+          firstSlide.addEventListener('transitionend', function handler() {
+            firstSlide.classList.remove('first-fade');
+            firstSlide.style.transform = '';
+            firstSlide.removeEventListener('transitionend', handler);
+          });
+        }
+      });
     });
   });
 </script>
