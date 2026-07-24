@@ -31,11 +31,13 @@ body, html {
 /* Hover effect */
 .header .right a:hover {
   text-decoration: underline; /* Underline on hover */
+  text-decoration-color: rgb(40, 40, 40);
 }
 
 /* Active (clicked) link style */
 .active {
   text-decoration: underline; /* Keeps the underline for active link */
+  text-decoration-color: rgb(40, 40, 40);
 }
 
 .header a.left:hover {
