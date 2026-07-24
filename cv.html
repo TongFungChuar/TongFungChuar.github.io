@@ -256,7 +256,7 @@ body, html {
 /* Styles for mobile phones */
 @media only screen and (max-width: 600px) {
     .content h1 {
-        font-size: 18px; /* Smaller font size for mobile screens */
+        font-size: 20px; /* Larger font size for mobile screens */
         /* ... other styles ... */
     }
 
@@ -266,8 +266,21 @@ body, html {
     }
 
     .content p {
-        font-size: 14px; /* Smaller font size for mobile screens */
+        font-size: 16px; /* Larger font size for mobile screens */
         /* ... other styles ... */
+    }
+
+    /* The CV entries below are plain divs (.cv-item, .education-year,
+       .education-text), not <p> tags, so the .content p rule above never
+       reached them — they were stuck at the 12px desktop size. Bumping
+       them here so the actual CV text is readable on mobile too. */
+    .cv-item {
+        font-size: 16px;
+    }
+
+    .education-year,
+    .education-text {
+        font-size: 16px;
     }
 
     /* Adjust any other text elements you may have */

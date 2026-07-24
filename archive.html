@@ -297,7 +297,11 @@
 
         @media only screen and (max-width: 600px) {
           .nav-item {
-            font-size: 14px;
+            font-size: 16px;
+          }
+
+          .year-title {
+            font-size: 20px;
           }
 
           .sidebar {
@@ -353,10 +357,8 @@
             width: 100%;
             padding-left: 15px;
             padding-right: 15px;
-            padding-top: 6px;
-            padding-bottom: 6px;
             box-sizing: border-box;
-            font-size: 6px;
+            font-size: 8px;
           }
         }
     </style>
@@ -502,7 +504,15 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        window.addEventListener("load", () => {
+            // Wait a full "load" (not just DOMContentLoaded) so images have
+            // their real dimensions before we measure/observe them, then wait
+            // two animation frames so the browser has painted the initial
+            // (opacity: 0) state before the observer can flip it to visible.
+            // Without this, cached/instant image loads can make the reveal
+            // fire immediately for everything already in view.
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
             // ---- Year navigation (accordion) ----
             const groups = document.querySelectorAll(".year-group");
 
@@ -567,6 +577,8 @@
             thumbnails.forEach((el, i) => {
                 el.style.transitionDelay = (Math.min(i, 4) * 60) + "ms";
                 revealObserver.observe(el);
+            });
+                });
             });
         });
     </script>

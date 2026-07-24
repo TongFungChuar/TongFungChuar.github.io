@@ -212,7 +212,7 @@ body, html {
         padding-left: 15px;
         padding-right: 15px;
         box-sizing: border-box; /* Include padding in width calculation */
-        font-size: 6px; /* Smaller text size */
+        font-size: 8px; /* Smaller text size */
         box-sizing: border-box; /* Include padding in width calculation */
     }
 }
@@ -281,7 +281,7 @@ body, html {
 /* Styles for mobile phones */
 @media only screen and (max-width: 600px) {
     .content h1 {
-        font-size: 18px; /* Smaller font size for mobile screens */
+        font-size: 20px; /* Larger font size for mobile screens */
         /* ... other styles ... */
     }
 
@@ -291,7 +291,7 @@ body, html {
     }
 
     .content p {
-        font-size: 14px; /* Smaller font size for mobile screens */
+        font-size: 16px; /* Larger font size for mobile screens */
         /* ... other styles ... */
     }
 
@@ -406,7 +406,15 @@ body, html {
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        window.addEventListener("load", () => {
+            // Wait a full "load" (not just DOMContentLoaded) so images have
+            // their real dimensions before we measure/observe them, then wait
+            // two animation frames so the browser has painted the initial
+            // (opacity: 0) state before the observer can flip it to visible.
+            // Without this, cached/instant image loads can make the reveal
+            // fire immediately for everything already in view.
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
             const images = document.querySelectorAll(".image-container img");
 
             const revealObserver = new IntersectionObserver((entries) => {
@@ -424,6 +432,8 @@ body, html {
             images.forEach((el, i) => {
                 el.style.transitionDelay = (Math.min(i, 4) * 60) + "ms";
                 revealObserver.observe(el);
+            });
+                });
             });
         });
     </script>
